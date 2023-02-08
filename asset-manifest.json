@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/hamker/static/css/main.61b89ee4.css",
-    "main.js": "/hamker/static/js/main.1234e255.js",
+    "main.js": "/hamker/static/js/main.c1dd399a.js",
     "static/js/787.99309951.chunk.js": "/hamker/static/js/787.99309951.chunk.js",
     "static/media/banner_2x.png": "/hamker/static/media/banner_2x.43322621e65ba8e191b5.png",
     "static/media/logo-full.svg": "/hamker/static/media/logo-full.32b8af2fa4c6725f58a3a63aa30587e3.svg",
     "index.html": "/hamker/index.html",
     "main.61b89ee4.css.map": "/hamker/static/css/main.61b89ee4.css.map",
-    "main.1234e255.js.map": "/hamker/static/js/main.1234e255.js.map",
+    "main.c1dd399a.js.map": "/hamker/static/js/main.c1dd399a.js.map",
     "787.99309951.chunk.js.map": "/hamker/static/js/787.99309951.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61b89ee4.css",
-    "static/js/main.1234e255.js"
+    "static/js/main.c1dd399a.js"
   ]
 }
