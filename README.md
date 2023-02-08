@@ -1,6 +1,6 @@
 # Project Name
 
-![logo-full_4x](https://user-images.githubusercontent.com/110155965/217418884-d8c677a9-1a46-43fb-81e6-26297dd82a8e.png)
+![logo-full_4x](https://user-images.githubusercontent.com/110155965/217418884-d8c677a9-1a46-43fb-81e6-26297dd82a8e.png) <br/>
 다이어리 꾸미기가 가능한 개인 다이어리 웹앱!
 
 React 공부를 시작한지 2주정도 됐습니다!<br/>
