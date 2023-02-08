@@ -37,15 +37,17 @@ function Calender(props){
         break;
     }
     if (remote !== null) {
-      const check = remote + month;
+      const check = remote + parseInt(month);
       if (check >= 13) {
         setYear(year + 1);
-        setMonth(1);
+        setMonth('0'+1);
       } else if (check <= 0) {
         setYear(year - 1);
         setMonth(12);
+      } else if (check > 0 && check < 10){
+        setMonth('0'+check);
       } else {
-        setMonth(remote + month);
+        setMonth(check)
       }
     }
   };
@@ -84,7 +86,12 @@ function Calender(props){
                 key={i}
                 onClick={()=>{changeMonth(item.class)}}
               >
-                {item.date}
+                <p>{item.date}</p>
+                <div className="calc">
+                  {
+                    
+                  }
+                </div>
               </div>
             ))
           }

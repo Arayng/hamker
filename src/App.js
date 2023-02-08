@@ -91,6 +91,7 @@ function App() {
   },[])
   useEffect(()=>{
     document.documentElement.style.setProperty(`--theme`,theme)
+    document.documentElement.style.setProperty(`--themeBack`,theme+'1e')
   },[theme]);
   useEffect(()=>{
     if(todoData.length > 0){
