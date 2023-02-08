@@ -49,6 +49,11 @@ function Todo(props){
     }
     props.todoUpdate();
   }
+  const onKeydown = e =>{
+    if(e.key === 'Enter'){
+      addTodoAction(todo,date)
+    }
+  }
   return(
     <article className="todo">
       <div className="cardUI">
@@ -60,7 +65,7 @@ function Todo(props){
             onOff && 
             <div className={`todoInput${fade ? ' active':''} myForm`}>
               <label className="inputDesign">
-                <input type="text" className="text" placeholder="할 일 추가" onChange={(e)=>{setTodo(e.target.value)}} onFocus={()=>{setTodo('')}} value={todo||''}/>
+                <input type="text" className="text" placeholder="할 일 추가" onChange={(e)=>{setTodo(e.target.value)}} onKeyDown={onKeydown} onFocus={()=>{setTodo('')}} value={todo||''}/>
                 <i className="line"></i>
               </label>
               <label className="inputDesign">
