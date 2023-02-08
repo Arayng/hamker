@@ -28,7 +28,7 @@ function App() {
     m: setDate()[1],
     d: setDate()[2]
   });
-  let [theme, setTheme] = useState('');
+  let [theme, setTheme] = useState('#ffaf91');
   let [todoData, setTodoData] = useState('');
   let [calcData, setCalcData] = useState('');
   let [placholder, setPlaceholder] = useState(true);
@@ -38,6 +38,7 @@ function App() {
     m: parseInt(today.m),
     y: today.y
   })
+  let [screen, checkScreen] = useState(0);
   const todoDBupdate = function(){
     getDB('todo').then(function(i){
       setTodoData(i)
@@ -88,14 +89,21 @@ function App() {
   useLayoutEffect(()=>{
     todoDBupdate();
     calcDBupdate();
+    checkScreen(window.screen.width)
   },[])
   useEffect(()=>{
     document.documentElement.style.setProperty(`--theme`,theme)
-    document.documentElement.style.setProperty(`--themeBack`,theme+'1e')
+    if(theme){
+      document.documentElement.style.setProperty(`--themeBack`,theme+'1e')
+    } else {
+      document.documentElement.style.setProperty(`--themeBack`,theme)
+    }
   },[theme]);
   useEffect(()=>{
     if(todoData.length > 0){
       setPlaceholder(false)
+    } else {
+      setPlaceholder(true)
     }
   },[todoData])
   useEffect(()=>{
@@ -104,7 +112,9 @@ function App() {
   return (
     <div className="App">
       <Header logo={Hamkerlogo} setNav={setNav} setTheme={setTheme}/>
-      <Sticker/>
+      {
+        screen > 1020&& <Sticker/>
+      }
       <Routes>
         <Route path="/" element={<Home placholder={placholder} totalIncome={totalIncome} totalExpense={totalExpense} todoData={todoData} todoUpdate={todoDBupdate}/>}></Route>
         <Route path="/todo" element={<Todo placholder={placholder} today={today} todoData={todoData} todoUpdate={todoDBupdate}/>}></Route>

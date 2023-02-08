@@ -346,10 +346,10 @@ footer {
 
 
 .placeholder {
-  width: 100%;
   height: 85%;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #BDBDBD;
   font-size: 14px;
   padding-left: 5px;
@@ -451,12 +451,32 @@ footer {
   .submit {
     width: 80px;
     height: 34px;
-    border: none;
+    border: 2px solid $theme-color;
     border-radius: 5px;
-    background-color: $theme-color;
-    color: #000;
+    background-color: $theme-background;
+    color: $theme-color;
     font-size: 16px;
+    line-height: 24px;
     font-weight: bold;
+    position: relative;
+    transition: transform 0.4s;
+    &::after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.4s;
+      background-color: $theme-color
+    }
+    &:hover{
+      transform: scale(1.17);
+      &::after{
+        opacity: 0.2
+      }
+    }
   }
 }
 

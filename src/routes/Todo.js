@@ -71,7 +71,7 @@ function Todo(props){
                 <input type="date" className="date" onChange={(e)=>{setDate(e.target.value)}} value={date||''} data-date={date}/>
                 <i className="line"></i>
               </label>
-              <button className="submit myBtn" onClick={()=>{addTodoAction(todo,date)}}>추가</button>
+              <button className="submit" onClick={()=>{addTodoAction(todo,date)}}>추가</button>
             </div>
           }
         </div>

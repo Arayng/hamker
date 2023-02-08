@@ -122,7 +122,7 @@ function Calc(props){
               <input type="text" className="text memo" placeholder="메모" onChange={(e)=>{setMemo(e.target.value)}} value={memo||''}/>
               <i className="line"></i>
             </label>
-            <button className="submit myBtn" onClick={()=>{addCalcAction(money,date,type,memo)}}>추가하기</button>
+            <button className="submit" onClick={()=>{addCalcAction(money,date,type,memo)}}>추가하기</button>
           </div>
         </div>
       </div>
