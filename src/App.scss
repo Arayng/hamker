@@ -1,0 +1,1017 @@
+/* ****************** 웹 폰트 ****************** */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/******** color setting ********/
+
+:root {
+  --theme: #ffaf91;
+}
+
+$theme-color: var(--theme);
+
+
+/******** ************* ********/
+
+/* ****************** public css ****************** */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+button {
+  overflow: hidden;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: "Pretendard", "맑은 고딕", 'Open Sans', sans-serif;
+}
+
+html,
+body {
+  min-width: 320px;
+  min-height: 320px;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ol,
+dl,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+address {
+  font-style: normal;
+}
+
+.hide {
+  overflow: hidden;
+  /* position: absolute; */
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px
+}
+
+fieldset {
+  border: none;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+}
+
+.myBtn {
+  font-size: 32px;
+  opacity: 0.6;
+  transition: transform 0.4s, opacity 0.4s;
+  cursor: pointer;
+  color: $theme-color;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.17);
+  }
+
+  &.rotate:hover {
+    opacity: 1;
+    transform: scale(1.17) rotate(360deg);
+  }
+
+  &.toggle {
+    width: 28px;
+    transform: rotateX(180deg);
+  }
+}
+
+.App {
+  background-color: #ffaf911e;
+}
+
+.spacer {
+  width: 32px;
+  height: auto;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+
+  &.column {
+    flex-direction: column;
+  }
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  width: 27px;
+  height: 32px;
+  overflow: hidden;
+  margin-left: 14px;
+
+  &.on {
+    transition: width 0.4s;
+    width: 74px;
+  }
+
+  .myBtn {
+    width: 24px;
+    font-size: 24px;
+    padding-left: 3px;
+    margin-right: 10px;
+  }
+}
+
+/******** header ********/
+header {
+  width: 100%;
+  box-shadow: 0 2px 5px #eee;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.header {
+  width: 95%;
+  min-width: 320px;
+  max-width: 1200px;
+  height: 90px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 40.466%;
+    max-width: 280px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 85.633%;
+      height: 95%;
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.38);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .bg {
+    width: 320px;
+    height: 100%;
+    margin: 0 0 0 auto;
+    background-color: #fff;
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+    transform-origin: left;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+  }
+
+  .bg.transition {
+    transform: translateX(50%) scaleX(0.8);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .menu {
+    width: 100%;
+    height: 100%;
+    padding: 50px 40px 50px 20px;
+    box-sizing: border-box;
+
+    .item {
+      display: block;
+      font-weight: bold;
+      line-height: 1.5;
+      padding: 10px;
+      transition: transform 0.3s;
+
+      a {
+        display: block;
+        color: #999;
+        transition: color 0.3s, transform 0.3s;
+        font-size: 18px;
+
+        &.active {
+          color: $theme-color;
+        }
+
+        &:hover {
+          color: $theme-color;
+          transform: translateX(10px)scale(1.07);
+        }
+
+        .navIcon {
+          width: 20px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+  }
+}
+
+/************************/
+/******** footer ********/
+
+footer {
+  width: 100%;
+  margin: 20px auto 0;
+  background-color: #E6E6E6;
+  padding: 30px 20px 20px;
+  box-sizing: border-box;
+  box-shadow: 0 -2px 5px #eee;
+  color: #999;
+
+  .menu {
+    display: flex;
+    margin-top: 10px;
+
+    .item {
+      margin-right: 10px;
+
+      a {
+        line-height: 1rem;
+        color: #999;
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 60px;
+    line-height: 1.7rem;
+  }
+}
+
+/************************/
+
+@mixin cardUIDesign {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px #ddd;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@mixin cardUIContent {
+  width: 94%;
+  height: 280px;
+  margin: 19px auto 0;
+  padding: 1px 5px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(153, 153, 153, 0.62);
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+}
+
+@mixin cardUITitle($height: 40px) {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: $height;
+  position: relative;
+  border-bottom: 1px solid #BDBDBD;
+  transition: height 0.4s;
+}
+
+@mixin contentDesign {
+  width: 95%;
+  min-width: 320px;
+  max-width: 1000px;
+  margin: 60px auto 0;
+  padding-bottom: 60px;
+}
+
+
+.placeholder {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  color: #BDBDBD;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.myForm {
+  .inputDesign {
+    border-bottom: 1px solid #999;
+    margin-right: 20px;
+    position: relative;
+
+    .line {
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -1px;
+      border-bottom: 3px solid $theme-color;
+      transition: all 0.2s;
+    }
+
+    .text {
+      width: 280px;
+      height: 30px;
+      border: none;
+      padding: 2px 25px 2px 5px;
+      box-sizing: border-box;
+      position: relative;
+      transition: transform 0.4s;
+
+      &:focus {
+        border-radius: 3px;
+        outline: none;
+
+        +.line {
+          right: 0;
+          transition: all 0.2s;
+        }
+      }
+    }
+
+    .dateView {
+      align-items: center;
+      height: 30px;
+
+      p {
+        color: #000;
+        font-weight: normal;
+        padding-right: 10px;
+      }
+
+      .myBtn {
+        font-size: 24px;
+      }
+    }
+
+    .date {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+
+      &::-webkit-calendar-picker-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+  .radioGroup{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 30px;
+    input[type="radio"]{
+      appearance:none;
+      outline: 1px solid $theme-color;
+      border-radius: 50%;
+      width: 19px;
+      height: 19px;
+      cursor: pointer;
+      &:checked{
+        border: 3px solid #fff;
+        box-sizing: border-box;
+        background-color: $theme-color;
+        outline: 1px solid $theme-color;
+      }
+    }
+    
+    label{
+      margin: 0 10px 0 5px;
+      cursor: pointer;
+    }
+  }
+  .submit {
+    width: 80px;
+    height: 34px;
+    border: none;
+    border-radius: 5px;
+    background-color: $theme-color;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+/********* home ********/
+.home {
+  @include contentDesign();
+
+  .cardUI {
+    @include cardUIDesign();
+    margin-top: 60px;
+
+    .title {
+      @include cardUITitle();
+
+      .more {
+        &.myBtn {
+          display: inline-block;
+          font-size: 1rem;
+          padding-left: 10px;
+          color: #343a40;
+        }
+
+        &:hover {
+          transform: translate(7px);
+        }
+      }
+
+      .plus {
+        position: absolute;
+        right: 20px;
+      }
+    }
+
+    .content {
+      @include cardUIContent();
+    }
+
+
+  }
+
+  .banner {
+    width: 81%;
+    margin: 70px auto 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .link {
+      display: block;
+      width: 30%;
+      overflow: hidden;
+      position: absolute;
+      bottom: 7%;
+      right: 6%;
+    }
+  }
+}
+
+/************************/
+/********* todo ********/
+.todo {
+  @include contentDesign();
+
+  .cardUI {
+    @include cardUIDesign();
+
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include cardUITitle();
+
+      &.active {
+        @include cardUITitle(80px);
+      }
+
+      .todoInput {
+        flex-basis: 90%;
+        margin: auto;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        transition: translate 0.4s, opacity 0.4s;
+        opacity: 0;
+        transform: translateY(-20px);
+
+        &.active {
+          opacity: 1;
+          transform: translateY(0)
+        }
+
+      }
+
+      .past {
+        color: #f7232f;
+        font-size: 1.2rem;
+      }
+    }
+
+    .content {
+      @include cardUIContent();
+    }
+  }
+}
+
+// check box
+
+.chklist {
+  height: 32px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .chkbox {
+    display: flex;
+    ;
+    align-items: center;
+    cursor: pointer;
+
+    .cInput {
+      font-size: 24px;
+      color: #999;
+      padding-right: 6px;
+
+      &.checked {
+        color: $theme-color;
+      }
+    }
+  }
+
+  .cLabel {
+    display: inline-block;
+    max-width: 170px;
+    max-height: 19px;
+    vertical-align: text-bottom;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    &.checked {
+      color: #999;
+      text-decoration: line-through;
+    }
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    position: relative;
+
+    p {
+      cursor: default;
+
+      &:hover::after {
+        content: '목표일';
+        position: absolute;
+        left: -40px;
+      }
+    }
+
+
+  }
+}
+
+/************************/
+/********* calender ********/
+.calender {
+  @include contentDesign();
+
+  .cardUI {
+    @include cardUIDesign();
+    padding: 10px 5px;
+
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include cardUITitle();
+      border: none;
+      align-items: center;
+      padding: 0 12px 0 15px;
+
+      &.active {
+        @include cardUITitle(80px);
+      }
+
+      .calBtnGroup {
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .myBtn {
+          &:first-child:hover {
+            transform: translate(-3px) scale(1.17);
+          }
+
+          &:last-child:hover {
+            transform: translate(3px) scale(1.17);
+          }
+        }
+      }
+    }
+
+    .content {
+      @include cardUIContent();
+    }
+
+    &.full {
+      width: 100%;
+    }
+  }
+
+  .calDayGroup {
+    display: flex;
+    width: 100%;
+
+    .calDay {
+      width: calc(100% / 7);
+      margin: 2px 2.5px;
+      padding: 2px 0;
+      text-align: center;
+      box-sizing: border-box;
+      background-color: #343a4008;
+
+      &:first-child {
+        color: #FE2E64;
+        background-color: #FE2E6418;
+      }
+
+      &:last-child {
+        color: #2E9AFE;
+        background-color: #2e99fe18;
+      }
+    }
+  }
+
+  .dateGroup {
+    display: flex;
+    flex-wrap: wrap;
+
+    .date {
+      width: calc((100%/7) - 5px);
+      height: 15vh;
+      margin: 1.5px 2.5px;
+      padding: 3px 5px;
+      box-sizing: border-box;
+      background-color: #343a4008;
+      cursor: pointer;
+      transition: transform 0.4s, background 0.4s;
+      position: relative;
+
+      &:hover {
+        transform: scaleX(1.07);
+        background-color: #343a4024;
+      }
+
+      &:nth-child(7n+1) {
+        background-color: #FE2E6418;
+        color: #FE2E64;
+
+        &:hover {
+          background-color: #FE2E6436;
+        }
+      }
+
+      &:nth-child(7n) {
+        background-color: #2e99fe18;
+        color: #2E9AFE;
+
+        &:hover {
+          background-color: #2e99fe36;
+        }
+      }
+
+      &.prev,
+      &.next {
+        color: #BDBDBD;
+        background: none;
+
+        &:hover {
+          background: #343a4024;
+        }
+      }
+
+      &.today {
+        font-weight: bold;
+        font-size: 1.07rem;
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+/************************/
+
+/********* calcurator ********/
+.calcurator {
+  @include contentDesign();
+
+  .cardUI {
+    @include cardUIDesign();
+    padding: 10px 5px;
+
+    &.full {
+      width: 95%;
+    }
+
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include cardUITitle();
+      border: none;
+      align-items: center;
+      padding: 0 12px 0 15px;
+
+      &.active {
+        @include cardUITitle(80px);
+      }
+
+      h3 {
+        margin-right: 8px;
+      }
+
+      .calBtnGroup {
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .myBtn {
+          &:first-child:hover {
+            transform: translate(-3px) scale(1.17);
+          }
+
+          &:last-child:hover {
+            transform: translate(3px) scale(1.17);
+          }
+        }
+
+        .monthSelect {
+          position: relative;
+          @extend .myBtn;
+
+          input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+
+            &::-webkit-calendar-picker-indicator {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      @include cardUIContent();
+      margin-top: 0;
+      width: 320px;
+      height: 0;
+      opacity: 0;
+      transition: all 0.4s;
+      overflow-y: hidden;
+    }
+
+    &.on {
+      .content {
+        @include cardUIContent();
+        overflow-y: hidden;
+        width: 320px;
+        padding: 20px;
+        opacity: 1;
+      }
+      .inputDesign{
+        margin-right: 0;
+        margin-bottom: 20px;
+        input{
+          width: 100%;
+          padding: 3px 5px;
+          &::placeholder{
+            font-family: 'pretendard';
+            font-size: 16px;
+            color: #000
+          }
+          
+        }
+      }
+    }
+
+  }
+}
+
+$income: #26b826;
+$expense: #f7232f;
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+
+  .total {
+    flex: 1;
+    height: 65px;
+    margin: 0 0.5px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &:first-child {
+      border-right: 1px solid #343a4048;
+    }
+  }
+
+  .totalIncome {
+    color: $income;
+  }
+
+  .totalExpense {
+    color: $expense;
+  }
+}
+
+.gauge {
+  width: 100%;
+  height: 15px;
+  margin: 30px 20px 20px;
+  border-radius: 10px;
+  background-color: $expense;
+}
+
+.gaugeIncome {
+  height: 100%;
+  border-radius: 10px;
+  background-color: $income;
+  position: relative;
+  transition: width 0.4s;
+
+  .face {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateX(50%) translateY(-50%);
+    background-color: #fff;
+    border: 1px solid #99999938;
+    box-shadow: 2px 2px 7px #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .faceIcon {
+      font-size: 32px;
+      color: $theme-color;
+    }
+  }
+}
+
+.tip {
+  width: 100%;
+  text-align: center;
+  color: #999;
+}
+
+@mixin calcAfter() {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.calcItem {
+  @include cardUIDesign();
+  border-radius: 0;
+  border: 1px solid #99999938;
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+  &.income::after {
+    @include calcAfter();
+    background-color: $income;
+  }
+
+  &.expense::after {
+    @include calcAfter();
+    background-color: $expense;
+  }
+
+  .text {
+    flex: 1.5;
+
+    .iDate {
+      font-size: 14px;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+
+      .itype {
+        text-align: right;
+      }
+    }
+
+    .iMoney {
+      padding-top: 5px;
+      text-align: right;
+    }
+  }
+
+  .memo {
+    flex: 3;
+    text-align: right;
+    padding-right: 15px;
+    overflow: hidden;
+    p{
+      padding-left: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .iconGroup {
+    .myBtn {
+      font-size: 24px;
+    }
+
+  }
+
+}

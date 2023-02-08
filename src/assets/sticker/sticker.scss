@@ -1,0 +1,15 @@
+.App{
+  .sticker{
+    &.left{
+      position: absolute;
+      z-index: 10;
+      top:50%;
+      left: 0;
+    }
+  }
+  @media (max-width : 1000px) {
+    .sticker{
+      display: none;
+    }
+  }
+}
