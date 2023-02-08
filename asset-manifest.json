@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/hamker/static/css/main.04954b46.css",
-    "main.js": "/hamker/static/js/main.aa17091f.js",
+    "main.css": "/hamker/static/css/main.a685c19f.css",
+    "main.js": "/hamker/static/js/main.e730cf46.js",
     "static/js/787.99309951.chunk.js": "/hamker/static/js/787.99309951.chunk.js",
     "static/media/banner_2x.png": "/hamker/static/media/banner_2x.43322621e65ba8e191b5.png",
     "static/media/logo-full.svg": "/hamker/static/media/logo-full.32b8af2fa4c6725f58a3a63aa30587e3.svg",
     "index.html": "/hamker/index.html",
-    "main.04954b46.css.map": "/hamker/static/css/main.04954b46.css.map",
-    "main.aa17091f.js.map": "/hamker/static/js/main.aa17091f.js.map",
+    "main.a685c19f.css.map": "/hamker/static/css/main.a685c19f.css.map",
+    "main.e730cf46.js.map": "/hamker/static/js/main.e730cf46.js.map",
     "787.99309951.chunk.js.map": "/hamker/static/js/787.99309951.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04954b46.css",
-    "static/js/main.aa17091f.js"
+    "static/css/main.a685c19f.css",
+    "static/js/main.e730cf46.js"
   ]
 }
