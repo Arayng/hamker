@@ -7,8 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 serviceWorkerRegistration.register();
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
