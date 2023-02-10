@@ -9,7 +9,7 @@ function CalcSummery(props) {
 
 
   useEffect(() => {
-    const r = (props.totalIncome / (props.totalIncome + props.totalExpense)) * 100;
+    const r = 100 - ((props.totalExpense / props.totalIncome) * 100);
     setGauge(r);
 
     if (r > 65) {
