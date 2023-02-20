@@ -17,8 +17,7 @@ function Header(props){
             <img src={props.logo} alt="hamker" />
           </h1>
           <div name='testBox' style={{width:'130px', display:'flex'}} >
-            <input type="text" style={{width: '75px', height: '30px', padding: '6px', boxSizing:'border-box', marginRight:'5px'}} onChange={(e)=>{testColor(e.target.value)}}/>
-            <button type='button' style={{width: '50px', height: '30px'}} onClick={()=>{props.setTheme(tColor)}}>설정</button>
+ 
           </div>
           <FontAwesomeIcon icon={faBars} className='myBtn' onClick={()=>{props.setNav(true)}} />
         </div>
